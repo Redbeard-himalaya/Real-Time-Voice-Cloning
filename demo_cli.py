@@ -140,8 +140,8 @@ if __name__ == '__main__':
             # Then we derive the embedding. There are many functions and parameters that the
             # speaker encoder interfaces. These are mostly for in-depth research. You will typically
             # only use this function (with its default parameters):
-            embed = encoder.embed_utterance(preprocessed_wav, using_partials=True)
-            print("Created the embedding")
+            embed, partial_embeds, wave_slices = encoder.embed_utterance(preprocessed_wav, using_partials=True, min_pad_coverage=1.0, return_partials=True)
+            print(f"Created the embedding: partial_embeds[{len(partial_embeds)}] wave_slices[{len(wave_slices)}]")
 
 
             ## Generating the spectrogram
