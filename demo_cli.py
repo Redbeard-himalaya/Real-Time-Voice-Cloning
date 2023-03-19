@@ -133,14 +133,14 @@ if __name__ == '__main__':
             # - Directly load from the filepath:
             preprocessed_wav = encoder.preprocess_wav(in_fpath)
             # - If the wav is already loaded:
-            original_wav, sampling_rate = librosa.load(str(in_fpath))
-            preprocessed_wav = encoder.preprocess_wav(original_wav, sampling_rate)
+            # original_wav, sampling_rate = librosa.load(str(in_fpath))
+            # preprocessed_wav = encoder.preprocess_wav(original_wav, sampling_rate)
             print("Loaded file succesfully")
 
             # Then we derive the embedding. There are many functions and parameters that the
             # speaker encoder interfaces. These are mostly for in-depth research. You will typically
             # only use this function (with its default parameters):
-            embed = encoder.embed_utterance(preprocessed_wav)
+            embed = encoder.embed_utterance(preprocessed_wav, using_partials=True)
             print("Created the embedding")
 
 
