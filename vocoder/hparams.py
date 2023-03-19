@@ -39,6 +39,6 @@ voc_pad = 2                         # this will pad the input so that the resnet
 voc_seq_len = hop_length * 5        # must be a multiple of hop_length
 
 # Generating / Synthesizing
-voc_gen_batched = True              # very fast (realtime+) single utterance batched generation
-voc_target = 8000                   # target number of samples to be generated in each batch entry
+voc_gen_batched = False              # very fast (realtime+) single utterance batched generation
+voc_target = 480000                   # target number of samples to be generated in each batch entry
 voc_overlap = 400                   # number of samples for crossfading between batches
